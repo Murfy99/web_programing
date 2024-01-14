@@ -1,0 +1,40 @@
+.bodyContainer{
+    margin: 20px 100px;
+    border: black solid 1px;
+    direction: rtl;
+    padding: 20px;
+}
+
+#shoesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.shoeRow {
+    display: flex;
+}
+
+.shoeItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.shoeImage {
+    max-width: 100%;
+    height: auto;
+}
+
+.shoeItemContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shoeItemImageContainer{
+    max-width: 70%;
+}
