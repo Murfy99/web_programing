@@ -1,0 +1,6 @@
+.bodyContainer{
+    margin: 20px 100px;
+    border: black solid 1px;
+    direction: rtl;
+    padding: 20px;
+}

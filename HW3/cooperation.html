@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کفش میفروشیم</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="cooperation.css">
+</head>
+<body>
+    <header class="headerContainer">
+        <div class="headerItems">
+            <input type="search" name="" id="headerSearch">
+        </div>
+        <div class="headerItems">
+            <h1 id="headerText">Shoes Shop</h1>
+        </div>
+        <div class="headerItems">
+            <div id="profileContainer">
+                <p><span id="usernameDisplay"></span> عزیز شما وارد شدید </p>
+                <button class="modalInputText" id="exitBtn">&times; Exit</button>
+            </div>
+            <div id="loginContainer">
+                <input class="headerButton" type="button" value="ورود" id="headerButtonLogin">
+                <input class="headerButton" type="button" value="عضویت" id="headerButtonSignUp">
+            </div>
+        </div>
+    </header>
+
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <form id="loginForm">
+            <input class="modalInputText" type="text" id="modalUsername" name="username" value="example" required>
+            <label for="username">نام کاربری</label>
+            <br>
+            <input class="modalInputText" type="password" id="modalPassword" name="password" value="password" required>
+            <label for="password">رمزعبور</label>
+            <br>
+            <button class="modalSubmitBtn" type="button" id="submitBtn">تایید</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="navContainer">
+        <nav class="navItems">
+            <ul class="listContainer">
+                <li class="listItems"><a href="#">برندها</a></li>
+                <li class="listItems"><a href="#">تخفیف</a></li>
+                <li class="listItems"><a href="#">ورزشی</a></li>
+                <li class="listItems"><a href="#">بچه گانه</a></li>
+                <li class="listItems"><a href="#">زنانه</a></li>
+                <li class="listItems"><a href="#">مردانه</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </div>
+    <div class="navContainer flex justifyContentCenter"> 
+        <a href="#" class="listItemLinks" >
+            <img src="src/images/lock.svg" class="listItemLinkImage" alt=""><br>
+                حریم خصوصی
+        </a>
+        <a href="cooperation.html" class="listItemLinks" >
+            <img src="src/images/person.svg" class="listItemLinkImage" alt=""><br>
+                تقاضای همکاری
+        </a>
+        <a href="#" class="listItemLinks" >
+            <img src="src/images/back.svg" class="listItemLinkImage" alt=""><br>
+                شرایط بازگرداندن
+        </a>
+        <a href="shoeSize.html" class="listItemLinks" >
+            <img src="src/images/question.svg" class="listItemLinkImage" alt=""><br>
+                راهنمای انتخاب سایز کفش
+        </a>
+        <a href="#" class="listItemLinks" >
+            <img src="src/images/mail.svg" class="listItemLinkImage" alt=""><br>
+                تماس با ما
+        </a>
+        <a href="about.html" class="listItemLinks" >
+            <img src="src/images/sms.png" class="listItemLinkImage" alt=""><br>
+                درباره ما
+        </a>
+    </div>
+
+    <div class="bodyContainer">
+        <h1>تقاضای همکاری</h1>
+        <form>
+            <label>لطفا نام خود را وارد کنید: </label>
+            <input type="text" id="name" size="35"><br><br>
+            <label>لطفا مدرک و رشته ی تحصیلی خود را وارد کنید: </label>
+            <input type="text" id="degree" size="35">
+
+            <p>دورکاری یا حضور در محل کار را ترجیح می دهید؟</p>
+            <input type="radio" name="حضور">
+            <label for="دورکاری"> دورکاری</label>
+            <input type="radio" name="حضور">
+            <label for="حضور در محل کار"> حضور در محل کار</label>
+            <input type="radio" name="حضور">
+            <label for="فرقی ندارد"> فرقی ندارد</label><br><br>
+
+            <label for="وضعیت تاًهل">وضعیت تاًهل: </label>
+            <select name="وضعیت تاًهل" id="وضعیت تاًهل">
+                <option value="م">مجرد</option>
+                <option value="ت">متاهل</option>
+            </select><br><br>
+
+            <label for="نکته">اگر نکته ای لازم است بگویید: </label><br>
+            <textarea id="نظر" name="نظر" rows="5" cols="45"></textarea><br><br>
+
+            <label for="علاقه مندی">حوزه های علاقه مندی خود را مشخص کنید: </label><br><br>
+            <input type="checkbox">
+            <label for="طراحی وبسایت">طراحی وبسایت</label>
+            <input type="checkbox">
+            <label for="پشتیبان فروش">پشتیبان فروش</label>
+            <input type="checkbox">
+            <label for="خدمات پس از فروش">خدمات پس از فروش</label>
+            <input type="checkbox">
+            <label for="انبارداری">انبارداری</label><br><br>
+        
+            <input type="submit" value="تاًیید">
+        </form>
+    </div>
+
+    <footer class="footerContainer flex">
+        <div class="footerItems">
+            <a href=""><h3>خدمات مشتریان</h3></a>
+            <a href=""><h5>سوالات متداول</h5></a>
+            <a href=""><h5>بازگرداندن کالا</h5></a>
+            <a href=""><h5>شرایط استفاده</h5></a>
+            <a href=""><h5>حریم شخصی</h5></a>
+        </div>
+        <div class="footerItems">
+            <a href=""><h3>اطلاعات ما</h3></a>
+            <a href=""><h5>درباره ما</h5></a>
+            <a href=""><h5>تماس با ما</h5></a>
+        </div>
+        <div class="footerItems">
+            <h3>به ما در رسانه های اجتماعی بپیوندید</h3>
+            <div class="footerMedia">
+                <div>
+                    <a href="#"><img src="src/images/twitter.svg" alt="Image 1"></a>
+                    <a href="#"><img src="src/images/google-plus.svg" alt="Image 2"></a>
+                    <a href="#"><img src="src/images/facebook.svg" alt="Image 3"></a>
+                </div>
+                <div>
+                    <a href="#"><img src="src/images/twitter.svg" alt="Image 1"></a>
+                    <a href="#"><img src="src/images/google-plus.svg" alt="Image 2"></a>
+                    <a href="#"><img src="src/images/facebook.svg" alt="Image 3"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footerItems">
+            <p>
+                تمامی حقوق این سایت متعلق یه دانشگاه بوده و هرگونه استفاده از منابع و طراحی های این سایت توسط نهاد های خارج از دانشگاه با پیگرد قانون همراه نخواهد بود!
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
