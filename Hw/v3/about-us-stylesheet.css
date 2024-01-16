@@ -1,0 +1,12 @@
+#about-us:link {color:#0000FF;}
+#about-us:visited {color:#0000FF;}
+#about-us:hover {color:#0000FF;}
+#about-us:active {color:#0000FF;}
+
+#about-us-div {
+    direction: rtl;
+    padding: 80px;
+    width: 65%;
+    margin: auto;
+    border: 2px dotted #000000;
+}

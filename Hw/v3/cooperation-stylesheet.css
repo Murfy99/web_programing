@@ -1,0 +1,14 @@
+#cooperation:link {color:#0000FF;}
+#cooperation:visited {color:#0000FF;}
+#cooperation:hover {color:#0000FF;}
+#cooperation:active {color:#0000FF;}
+
+#cooperation-div {
+    background-color: #edede9;
+    text-align: center;
+    direction: rtl;
+    padding: 10px;
+    padding-bottom: 15px;
+    width: 65%;
+    margin: auto;
+}

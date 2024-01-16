@@ -1,0 +1,140 @@
+body {
+    font-size: medium;
+    font-family: "Calibri";
+}
+
+.nav {
+    list-style-type: none;
+    text-align: center;
+}
+.nav li {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+a:link {
+    text-decoration: none;
+    color: #000000;
+}
+a:visited {color:#000000;}
+a:hover {color:#0000FF;}
+
+h2 {
+    display: inline;
+    text-align: center;
+    margin-left: 35%;
+}
+
+.header {display: inline-block;}
+
+#header-div {width: 60%;
+text-align: center;}
+#search-div {float: left;
+width: 10%;}
+#button-div {float: right;
+    width: 30%;
+}
+
+
+
+
+#search {
+    margin: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    background-image:url( 'images/search.svg');
+    background-repeat: no-repeat;
+    background-position: 5%;
+    direction: rtl;
+    background-size: 18px;
+    border-radius: 20px; 
+}
+
+.right {float: right;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+    border-color: #000000;
+    border: 2px solid;
+    border-radius: 20px;
+}
+
+#signup {
+    background-color: #FFFFFF;
+    width: 100px;
+    border-color: #000000;
+}
+
+#signup:hover {
+    color:#FFFFFF;
+    background-color: #0000FF; 
+    border-color: #0000FF;
+}
+
+#login {
+    color: #FFFFFF; 
+    background-color: #343a40; margin-right: 5px; 
+    width: 100px; 
+    border-color: #000000;
+}
+
+#login:hover {
+    color:#FFFFFF;
+    background-color: #0000FF; 
+    border-color: #0000FF;
+}
+
+#div-center {text-align: center;}
+
+.menu {
+    display: inline-block;
+    margin: 5px;
+    border-color: #000000;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 5px;
+    height: auto;
+    width: 12.5%;
+}
+
+img {height: 30px;
+    width: 30px;}
+
+.bold {font-weight: bold;}
+
+footer {
+    background-color: #c1c1c1;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 30px;
+    margin-bottom: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.row {
+    margin: 5px;
+}
+.row img {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+}
+
+span.span-header {
+    display: inline-block;
+    margin-bottom: 3px;
+    font-size: large;
+    font-weight: bold;
+}

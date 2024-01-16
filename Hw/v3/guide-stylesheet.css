@@ -1,0 +1,32 @@
+#guide:link {color:#0000FF;}
+#guide:visited {color:#0000FF;}
+#guide:hover {color:#0000FF;}
+#guide:active {color:#0000FF;}
+
+#guide-div {
+    background-color: #edede9;
+    text-align: center;
+    direction: ltr;
+    padding: 5px;
+    width: 65%;
+    margin: auto;
+}
+
+#guide-div table, th, td {
+    border: 1px solid #000000;
+}
+
+#guide-div table {
+    border-collapse: collapse;
+}
+
+
+#guide-div th, td {
+    padding: 15px;
+
+}
+
+.guide-table {
+    margin: 25px;
+    display: inline-block;
+}
