@@ -80,7 +80,7 @@ const shoesData = [
       "material": "فوم EVA"
     }
 ]
-  
+
 
 
 const mainImage = document.getElementById('mainImage');
@@ -90,7 +90,7 @@ const slider = document.getElementById('slider');
 // Function to update the main image and details
 function updateMainImage(index) {
     const selectedShoe = shoesData[index];
-    mainImage.src =`src/images/item.jpg`; // Replace with actual image path
+    mainImage.src = `src/images/item.jpg`; // Update the path accordingly
     mainImageDetails.innerHTML = `
         <h3>${selectedShoe.name}</h3>
         <p>Type: ${selectedShoe.type}</p>
@@ -98,6 +98,15 @@ function updateMainImage(index) {
         <p>Gender: ${selectedShoe.gender}</p>
         <p>Material: ${selectedShoe.material}</p>
     `;
+
+    // Remove 'selected' class from all cards
+    document.querySelectorAll('.shoeItem').forEach(card => {
+        card.classList.remove('selected');
+    });
+
+    // Add 'selected' class to the clicked card
+    const selectedCard = document.getElementById(`shoeItem-${index}`);
+    selectedCard.classList.add('selected');
 }
 
 // Function to create shoe cards in the slider
@@ -105,8 +114,14 @@ function createShoeCards() {
     shoesData.forEach((shoe, index) => {
         const card = document.createElement('div');
         card.classList.add('shoeItem');
+        card.setAttribute('id', `shoeItem-${index}`);
         card.innerHTML = `
-            <img class="shoeImage" src="/images/item.jpg.jpg" alt="${shoe.name}">
+            <img src="src/images/item.jpg" alt="${shoe.name}">
+            <div>
+                <h4>${shoe.name}</h4>
+                <p>Type: ${shoe.type}</p>
+                <p>Price: $${shoe.price}</p>
+            </div>
         `;
         card.addEventListener('click', () => {
             updateMainImage(index);

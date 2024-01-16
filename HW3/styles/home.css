@@ -1,50 +1,27 @@
-.bodyContainer {
-    display: flex;
+.bodyContainer{
     margin: 20px 100px;
     border: black solid 1px;
     direction: rtl;
     padding: 20px;
 }
 
-.main-container {
+#shoesContainer {
     display: flex;
-}
-
-.main-image-container {
-    flex: 1;
-    margin-right: 20px;
-    position: relative;
-}
-
-#mainImage {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.main-image-details {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.sidebar-container {
-    flex: 0 0 150px;
-    display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+}
+
+.shoeRow {
+    display: flex;
 }
 
 .shoeItem {
     border: 1px solid #ccc;
     padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
 }
 
 .shoeImage {
@@ -52,6 +29,12 @@
     height: auto;
 }
 
-.shoeImage:hover {
-    transform: scale(1.1);
+.shoeItemContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shoeItemImageContainer{
+    max-width: 70%;
 }
