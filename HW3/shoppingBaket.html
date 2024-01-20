@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>کفش میفروشیم</title>
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/shoppingBasket.css">
     
 </head>
 <body>
@@ -87,9 +87,16 @@
         </a>
     </div>
 
-    <div class="bodyContainer">
-        <div id="shoesContainer"></div>
-    </div>
+    <div id="totalBox">
+        <p>Total: $<span id="totalAmount">0.00</span></p>
+        <button id="payButton">Pay</button>
+      </div>
+      
+      <div class="bodyContainer">
+        <div id="shoesContainer" class="shoesContainer">
+          <!-- Shoes will be dynamically added here -->
+        </div>
+      </div>
 
     <footer class="footerContainer flex">
         <div class="footerItems">
