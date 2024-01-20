@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head dir="rtl" lang="fa-IR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقاضای همکاری</title>
+    <style>
+        .form {
+            font-family: "B Nazanin";
+        }
+    </style>
+</head>
+<body>
+  
+    <form action="index.php">
+        <!-- If we remove this, every thing will move to the left of the page-->
+        <div class="form"  dir="rtl" align="Center" style="background-color: bisque;">
+        <!--Adds a heading to the form-->
+        <h1>تقاضای همکاری</h1>
+        لطفا نام خود را وارد کنید:
+        <!-- Input type text for small texts, specify size -->
+        <input type="text" name="UserName" id="UserName" size=35 maxlength=35 value="">
+        <!--Adds spaces - remove and see what happens -->
+        </br></br>
+        لطفا مدرک و رشته ی تحصیلی خود را وارد کنید:
+        <input type="text" name="Deptt" size=35 maxlength=35 value=""> </br> </br>
+        دورکاری یا حضور در محل کار را ترجیح می دهید؟
+        <br>
+        <p>
+        <!-- Radio buttons help you choose one out of the many values -->
+        <input type="radio" name="exe" value=1>دورکاری
+        <input type="radio" name="exe" value=2>حضور در محل کار
+        <input type="radio" name="exe" value=3>فرقی ندارد
+        </p>
+        وضعیت تأهل:
+        <!--Select box lets you choose one of the multiple dropdown options-->
+        <select name="moviepref" ><option>
+        <option value=1 >مجرد
+        <option value=2 >متأهل
+        </select>
+        
+        <p>
+        اگر نکته ای لازم است بگویید:
+        <br>
+        <!-- For writing lot of text like descriptions with text wrapping,
+        if you dont want text wrapping, you can add wrap = "off" (horizontal scrollbar -->
+        <textarea name="Comments" cols=50 rows=5></textarea> </br>
+        </p>
+        حوزه های علاقه مندی خود را مشخص کنید:
+        <p>
+        <!--Checkbox lets you select multiple options -->
+        <input type="checkbox" name="ٌWeb">طراحی وبسایت
+        <input type="checkbox" name="Sell">پشتیبان فروش
+        <input type="checkbox" name="Garanty">خدمات پس از فروش
+        <input type="checkbox" name="Stock">انبارداری
+        </p>
+        <!--submits the information entered in the form by the user -->
+        <input type="button" value="submit" id="submit">
+        </div>
+        </form>
+        
+
+    <script src="./var.js"></script>
+    <script src="./event.js"></script>
+    <script src="./window.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>

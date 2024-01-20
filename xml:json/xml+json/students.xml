@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<class>
+<student>
+<name>
+Ali
+</name>
+<family>
+Karimi
+</family>
+<grade>
+18.0
+</grade>
+</student>
+<student>
+<name>
+Reza
+</name>
+<family>
+Hosseini
+</family>
+<grade>
+20.0
+</grade>
+</student>
+</class>

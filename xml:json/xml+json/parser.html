@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head> 
+	<meta http-equiv="Content-Type" content="text-html; charset=utf-8" />
+	<title>test XML parser</title>
+	<script type="text/javascript">
+		function parseXML(){
+			output = "";
+			input = document.getElementsByName("inputtext1")[0].value;
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(input,"text/xml");
+			
+			messages = xmlDoc.getElementsByTagName("root")[0].children;
+			for(i=0; i < messages.length; i++){
+				msg = messages[i];
+				
+				fromNode = msg.getElementsByTagName("from")[0];
+				fromText = fromNode.childNodes[0].nodeValue;
+				
+				toNode = msg.getElementsByTagName("to")[0];
+				toText = toNode.childNodes[0].nodeValue;
+				
+				bodyNode = msg.getElementsByTagName("body")[0];
+				bodyText = bodyNode.childNodes[0].nodeValue;
+				
+				output = output + fromText +" sent the following message to " + toText + "<br /> ''" + bodyText +"''<hr />";
+			}
+			document.getElementsByName("outputdiv1")[0].innerHTML = output;
+		}
+		
+		function parseJSON(){
+			output = "";
+			input = document.getElementsByName("inputtext2")[0].value;
+			jsonData = JSON.parse(input);
+			output += jsonData.messages.from + " sent the following message to " + jsonData.messages.to + "<br /> ''" + jsonData.messages.body +"''<hr />";
+
+			document.getElementsByName("outputdiv2")[0].innerHTML = output;
+		}
+		
+	</script>
+	
+</head>
+<body>
+Enter Your XML:<br />
+<textarea name="inputtext1" cols="80" rows="20">
+<root><msg><from></from><to></to><body></body></msg></root>
+</textarea>
+<input type="button" onclick="parseXML()" value="Parse" /> <br />
+<div name="outputdiv1" style="border-style:solid; border-width:1px; width:50%;"></div>
+
+Enter Your JSON:<br />
+<textarea name="inputtext2" cols="80" rows="20">
+{
+"type": "object",
+"properties": {
+	"messages": {
+		"type": "array",
+		"items": {
+			"type": "object",
+			"properties": {
+				"from": { "type": "string" },
+				"to": { "type": "string" },
+				"body": { "type": "string" }
+			}
+		}
+	}
+}
+}
+</textarea>
+<input type="button" onclick="parseJSON()" value="Parse" /> <br />
+<div name="outputdiv2" style="border-style:solid; border-width:1px; width:50%;"></div>
+
+</body>
+</html>
+

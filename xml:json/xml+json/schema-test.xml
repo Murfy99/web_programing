@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<note xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="note.xsd"> 
+	<to>Ali</to> 
+	<from>Reza</from> 
+	<date>20121020</date>
+	<content>This is a message 1</content>
+</note> 
+
+

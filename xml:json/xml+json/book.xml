@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="book.css" ?>
+<programming>
+	Good programming books:
+	<C>
+		<book>
+			<title>The C Programming Language </title>
+			<author>Ritchie</author>
+		</book>
+	</C>
+	<Java>
+		<book>
+			<title>Thinking in Java </title>
+			<author>Eckel</author>
+		</book>
+	</Java>
+</programming>
