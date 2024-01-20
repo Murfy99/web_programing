@@ -80,30 +80,29 @@ const shoesData = [
       "material": "فوم EVA"
     }
   ]
-  
+let totalPrice = 0
+const cartData =[] 
+for(const index of JSON.parse(localStorage.getItem('itemsList')) || []){
+  cartData.push(shoesData[index])
+  totalPrice+=shoesData[index].price
+}
 
-
-// Initialize the total amount
-let totalAmount = 0;
-
-// Function to update the total amount
-function updateTotalAmount() {
 const totalAmountElement = document.getElementById('totalAmount');
-totalAmountElement.textContent = totalAmount.toFixed(2);
-}
+totalAmountElement.textContent = totalPrice
 
-// Function to handle the pay button click
 function payButtonClicked() {
-alert(`Total Amount: $${totalAmount.toFixed(2)}`);
+  alert(`Total Price: $${totalPrice}\n پرداخت با موفقیت انجام شد`);
+  localStorage.setItem('itemsList', JSON.stringify([]));
+  window.location.href = 'shoppingBaket.html';
 }
 
-let itemCount = 1; // Initial item count
+let itemCount = 1; 
 
 function createShoeItem(shoe) {
   const shoeItem = document.createElement('div');
   shoeItem.className = 'shoeItem';
 
-  const imageSrc = `src/images/item.jpg`; // Replace with actual image path
+  const imageSrc = `src/images/item.jpg`;
 
   shoeItem.innerHTML = `
     <div class="shoeItemContainer">
@@ -113,10 +112,9 @@ function createShoeItem(shoe) {
           <p>Price: $${shoe.price.toFixed(2)}</p>
           <p>Gender: ${shoe.gender}</p>
           <p>Material: ${shoe.material}</p>
-          <button class="deleteButton" onclick="deleteItem()">Delete</button>
-          <button class="countButton" onclick="decreaseCount()">-</button>
-          <span class="itemCount">${itemCount}</span>
-          <button class="countButton" onclick="increaseCount()">+</button>
+          <button class="addButton" key="${shoe.picture_index}" onclick="deleteItem(${shoe.picture_index})">
+          <i class="fas fa-plus"></i>حذف کردن 
+          </button>
       </div>
       <div class="shoeItemImageContainer">
           <img class="shoeImage" src="${imageSrc}" alt="${shoe.name}">
@@ -127,40 +125,30 @@ function createShoeItem(shoe) {
   return shoeItem;
 }
 
-function deleteItem() {
-  // Implement your delete logic here
-  console.log('Item deleted');
-}
-
-function decreaseCount() {
-  // Implement your decrease count logic here
-  itemCount = Math.max(1, itemCount - 1);
-  updateItemCount();
-}
-
-function increaseCount() {
-  // Implement your increase count logic here
-  itemCount++;
-  updateItemCount();
-}
-
-function updateItemCount() {
-  const itemCountElement = document.querySelector('.itemCount');
-  if (itemCountElement) {
-    itemCountElement.textContent = itemCount;
+function dropFromLSArray(index){
+  let itemsList = JSON.parse(localStorage.getItem('itemsList')) || [];
+  const indexToRemove = itemsList.indexOf(index);
+  if (indexToRemove !== -1) {
+    itemsList.splice(indexToRemove, 1);
+    localStorage.setItem('itemsList', JSON.stringify(itemsList));
   }
 }
 
-// Function to display shoes in rows of three
-function displayShoesInRows(shoesData) {
-  const shoesContainer = document.getElementById('shoesContainer');
 
-  for (let i = 0; i < shoesData.length; i += 3) {
+function deleteItem(index) {
+  dropFromLSArray(index);
+  window.location.href = 'shoppingBaket.html';
+}
+
+function displayShoesInRows(cartData) {
+  const shoesContainer = document.getElementById('shoesContainer');
+  
+  for (let i = 0; i < cartData.length; i += 3) {
     const row = document.createElement('div');
     row.className = 'shoeRow';
 
-    for (let j = i; j < i + 3 && j < shoesData.length; j++) {
-      const shoe = shoesData[j];
+    for (let j = i; j < i + 3 && j < cartData.length; j++) {
+      const shoe = cartData[j];
       const shoeItem = createShoeItem(shoe);
       row.appendChild(shoeItem);
     }
@@ -169,8 +157,7 @@ function displayShoesInRows(shoesData) {
   }
 }
 
-displayShoesInRows(shoesData);
-updateTotalAmount();
+displayShoesInRows(cartData);
 
-// Add event listener for the pay button
+
 document.getElementById('payButton').addEventListener('click', payButtonClicked);

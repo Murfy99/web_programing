@@ -89,4 +89,18 @@
   margin: 5px; /* Adjust margin between buttons */
 }
 
+.addButton {
+  font-family: "Calibri";
+  width: 90px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black; /* Updated to use shorthand */
+  border-radius: 18px;
+  margin: 0 5px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
   

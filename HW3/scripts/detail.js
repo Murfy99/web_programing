@@ -87,10 +87,9 @@ const mainImage = document.getElementById('mainImage');
 const mainImageDetails = document.querySelector('.main-image-details');
 const slider = document.getElementById('slider');
 
-// Function to update the main image and details
 function updateMainImage(index) {
   const selectedShoe = shoesData[index];
-  mainImage.src = `src/images/item.jpg`; // Update the path accordingly
+  mainImage.src = `src/images/item.jpg`; 
   mainImageDetails.innerHTML = `
       <h3>${selectedShoe.name}</h3>
       <p>Type: ${selectedShoe.type}</p>
@@ -99,17 +98,14 @@ function updateMainImage(index) {
       <p>Material: ${selectedShoe.material}</p>
   `;
 
-  // Remove 'selected' class from all cards
   document.querySelectorAll('.shoeItem').forEach(card => {
       card.classList.remove('selected');
   });
 
-  // Add 'selected' class to the clicked card
   const selectedCard = document.getElementById(`shoeItem-${index}`);
   selectedCard.classList.add('selected');
 }
 
-// Function to create shoe cards in the slider
 function createShoeCards() {
   shoesData.forEach((shoe, index) => {
       const card = document.createElement('div');
@@ -122,7 +118,7 @@ function createShoeCards() {
               <p>Type: ${shoe.type}</p>
               <p>Price: $${shoe.price}</p>
           </div>
-          <button class="addButton" onclick="toggleAddButton(this)">
+          <button class="addButton" key="${index}" onclick="toggleAddButton(${index})">
           <i class="fas fa-plus"></i>اضافه کردن 
           </button>
       `;
@@ -133,9 +129,18 @@ function createShoeCards() {
   });
 }
 
+
+function addToLSArray(index){
+  let itemsList = JSON.parse(localStorage.getItem('itemsList')) || [];
+  if (!itemsList.includes(index)) {
+    itemsList.push(index);
+    localStorage.setItem('itemsList', JSON.stringify(itemsList));
+  }
+}
+
 // Function to toggle the "added" state of the Add button
 function toggleAddButton(button) {
-  button.classList.toggle('added');
+  addToLSArray(button)
 }
 
 // Initialize the page
